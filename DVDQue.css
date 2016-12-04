@@ -1,0 +1,82 @@
+@import url('fonts/fonts.css');
+@import url('reset.css');
+
+/* General Demo Style */
+body{
+	background: #ddd;
+	color: rgba(255,255,255,1);
+	font-family:'Verdana', Arial, sans-serif;
+	font-size: 15px;
+	
+}
+
+header{margin-bottom:30px;}
+a{
+	color: #fff;
+	text-decoration: none;
+}
+.outer-div
+{
+     padding: 30px;
+     text-align: center;
+}
+.inner-div
+{
+     display: inline-block;
+     padding: 50px;
+	  text-align: left;
+}
+
+#DVDApp{
+background: linear-gradient(to bottom right, #646883, #eeeeee);
+padding:10px 50px;
+box-shadow:0px 0px 4px 2px rgba(0,0,0,1);
+border-radius:15px;
+width:800px;
+}
+
+
+header h1{
+font-size:35px;
+color:#edf1ee;
+text-shadow:1px 1px 1px rgba(0,0,0,1);
+}
+
+ul.DVDList{margin-bottom:30px}
+
+ul li.ng-scope{list-style-type:none;background-color:#22232c;color:#ffffff;border-bottom:1px solid #ffffff;text-shadow:1px 1px 1px rgba(0,0,0,1);padding:10px 0 10px 15px;margin-bottom:1px}
+
+.X-Out{cursor:pointer;color:#ffffff;font-size:24px;text-shadow:1px 1px 1px rgba(0,0,0,1);padding:10px 0 0 0;background-color:#5d6179;}
+
+.btn-primary{padding:10px;border-radius:10px}
+
+.text-center {
+  text-align: center;
+}
+li span {
+  float: right;
+  cursor: pointer;
+}
+
+.fadeMe {
+  transition: 1s linear all;
+  -webkit-transition: 1s linear all;
+}
+
+.fadeMe.ng-enter {
+  opacity: 0;
+}
+
+.fadeMe.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+.fadeMe.ng-leave {
+  opacity: 1;
+}
+
+.fadeMe.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
+.ErrorTxt{color:#ff0000;font-weight:bold;}

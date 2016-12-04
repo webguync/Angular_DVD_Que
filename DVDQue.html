@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/DVDQue.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<title>Angular DVD List Que</title>
+</head>
+<body>
+
+<div class="outer-div"><div class="inner-div">
+<div id="DVDApp" ng-app="myDVDList" ng-cloak ng-controller="myCtrl" style="max-width:800px;overflow:auto">
+  <header>
+    <h1>My DVD QUE</h1>
+	<p>Enter a DVD title in the field and click the 'Add DVD' button to add it to the Que.</p><p> Simply click the red 'x' to delete a title.</p>
+  </header>
+  <ul class="DVDList">
+    <li ng-repeat="x in DVD" class="fadeMe">{{x}}
+	<span ng-click="removeItem($index)" class="X-Out">×</span></li>
+  </ul>
+  <div>
+    <div>
+      <div class="form-group">
+        <label for="DVD Title">Enter DVD Title:</label> <input type="text" class="form-control input-lg" id="inputlg" placeholder="Add a DVD title here" ng-model="addTitle">
+      </div><!--end form group-->
+      <div>
+        <button class="btn-primary pull-right" ng-click="addItem()">Add DVD</button>
+      </div>
+    </div>
+    <p class="ErrorTxt">{{errortext}}</p>
+  </div>
+</div>
+</div><!--end inner div-->
+</div><!--end outer div-->
+<script>
+var app = angular.module("myDVDList", ['ngAnimate'])
+app.controller("myCtrl", function($scope) {
+    $scope.DVD = ["Suicide Squad", "Sausage Party", "Star Wars"];
+    $scope.addItem = function () {
+        $scope.errortext = "";
+        if (!$scope.addTitle) {return;}
+        if ($scope.DVD.indexOf($scope.addTitle) == -1) {
+            $scope.DVD.push($scope.addTitle);
+        } else {
+            $scope.errortext = "This DVD is already in your Que! Please enter another title.";
+        }
+    }
+    $scope.removeItem = function (x) {
+        $scope.errortext = "";
+        $scope.DVD.splice(x, 1);
+    }
+});
+
+
+</script>
+
+</body>
+</html>
+
